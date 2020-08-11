@@ -1,0 +1,54 @@
+ <!DOCTYPE html>
+<html>
+     <head>
+		<title>Questionnaire</title>
+		<meta charset="utf-8"/>
+		<style>
+	     #decompteur{
+		 font-size:20px;
+		 text-align: center;
+}
+		</style>
+		<script>
+			var compteur = 10;
+			var intervalId = null;
+			function action()
+			{
+			  clearInterval(intervalId);
+			  alert("temps ecoulé");
+			}
+			function afficher()
+			{ 
+
+			 document.getElementById("decompteur").value = compteur + " secondes";
+			  compteur--;
+			  
+
+			}
+			function start()
+			{
+			  intervalId = setInterval(afficher, 1000);
+			  setTimeout(action,10000);
+			}
+			start()	;
+		</script>
+     </head>
+	 
+	    <body>
+			Temp restant:<input type="text" id="decompteur"/></br>
+			Un angle droit a :
+			
+			<input type="radio" name="angle" value="45" onclick="alert('bonne réponse');"/>45°
+			<input type="radio" name="angle" value="90" onclick="alert('bonne réponse');"/>90°
+			<input type="radio" name="angle" value="180" onclick="alert('bonne réponse');"/>180°
+					
+		</body>
+		
+		
+	
+</html>
+
+
+
+
+

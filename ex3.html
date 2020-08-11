@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+     <head>
+		<title>Equation du second degré</title>
+		<meta charset="utf-8"/>
+		<script>
+		function equation(){
+		
+		var a=parseInt(document.formulaire.a.value);
+		var b=parseInt(document.formulaire.b.value);
+		var c=parseInt(document.formulaire.c.value);
+		var d=b*b-4*a*c;
+		var s0=(-b)/(2*a);
+		var s1=((-b)-d)/(2*a);
+		var s2=((-b)+d)/(2*a);
+		
+		if (a==0)
+		{
+		document.getElementById("resultats").innerHTML = "L'équation n est pas du seconde degree ";
+		
+		}
+		else if (d<=0)
+		{
+		document.getElementById("resultats").innerHTML = "Aucune solution reels ";
+		}
+		else if (d==0)
+		{
+		document.getElementById("resultats").innerHTML ="Une seul solution : x1 =x2 = "+s0;
+		
+		}
+		else
+		{
+		document.getElementById("resultats").innerHTML ="Deux solution : x1 =" +s1+ " et x2= " +s2;
+				
+				}
+		}
+		</script>
+		<style>
+		fieldset{
+		width:300px;}
+		input[type="text"]{
+		margin:3px;
+		
+		width:50px;
+		}
+		</style>
+		
+     </head>
+	 
+	    <body>
+		<form name="formulaire" method="" action="" >
+			<fieldset>
+		    <legend > Résolution d'une équation du second degré:</legend>
+			<input type="text" name="a" pattern="^-?[0-9]" required/>x²
+			<input type="text" name="b" pattern="^-?[0-9]"  required/>x
+			<input type="text" name="c" pattern="^-?[0-9]" required/>=0
+			<input type="button" value="Résoudre" onclick="equation();"/>
+			
+			</fieldset>
+		</form>	
+		<p id="resultats" style="font-size:15px;"></p>
+		</body>
+		
+		
+	
+</html>
+
+
+
+
+
